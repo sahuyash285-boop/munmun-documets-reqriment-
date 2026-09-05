@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Munmun Finance | Documents Checklist - Updated</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eef3fb,#f8fafc);color:#172033}
+.wrap{max-width:980px;margin:25px auto;padding:15px}.card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 12px 40px rgba(16,40,80,.14)}
+.header{background:linear-gradient(135deg,#08265f,#1554ad);color:#fff;text-align:center;padding:30px 20px}.header h1{margin:0;font-size:34px;letter-spacing:1px}.powered{margin-top:5px;font-size:16px;font-weight:600}.tag{margin-top:10px;font-size:14px;opacity:.92}
+.info{padding:20px 28px;background:#f7f9fd;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}.info div{background:#fff;padding:14px;border-radius:12px;border:1px solid #e5e9f2}.info b{display:block;font-size:13px;color:#667085;margin-bottom:5px}.info span{font-size:15px;font-weight:700}
+.form{padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:block;font-weight:700;margin-bottom:8px}input,select{width:100%;padding:13px;border:1px solid #ccd3df;border-radius:10px;font-size:15px;background:#fff}.full{grid-column:1/-1}
+.primary,.action{width:100%;border:0;padding:15px;border-radius:11px;background:#1554ad;color:#fff;font-size:16px;font-weight:700;cursor:pointer}.primary:hover,.action:hover{background:#08265f}
+.section{margin:0 28px 22px;padding:22px;border-radius:16px;background:#f7f9fd;border:1px solid #e5e9f2}.section h2{text-align:center;margin:0 0 18px;font-size:21px}
+.progress{background:#fff;border-radius:12px;padding:15px;margin-bottom:18px;border:1px solid #e5e9f2;text-align:center}.progress strong{font-size:22px}
+.category{background:#fff;border-radius:12px;padding:16px;margin:12px 0;border:1px solid #e5e9f2}.category h3{margin:0 0 12px;color:#08265f;font-size:17px}.doc{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid #eef0f5}.doc:last-child{border-bottom:0}.doc input{width:18px;height:18px;padding:0}.optional{font-size:11px;color:#667085;margin-left:auto}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.whatsapp{background:#168c4a}.whatsapp:hover{background:#0e713b}
+.notes{font-size:12px;color:#667085;line-height:1.6}.footer{padding:0 28px 28px;text-align:center}.footer h3{margin:4px 0 10px}.contacts{line-height:1.8;font-size:14px}.disclaimer{font-size:11px;color:#667085;margin-top:15px;line-height:1.5}
+@media(max-width:700px){.info,.actions{grid-template-columns:1fr}.form{grid-template-columns:1fr}.full{grid-column:auto}.header h1{font-size:28px}}
+@media print{body{background:#fff}.wrap{margin:0;max-width:none;padding:0}.card{box-shadow:none}.no-print{display:none!important}.section{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<section class="header"><h1>MUNMUN FINANCE</h1><div class="powered">Powered by Yash Sahu</div><div class="tag">All Types of Loans Available • PAN India Service</div></section>
+<section class="info">
+<div><b>FOUNDER</b><span>YASH SAHU</span></div><div><b>NETWORK</b><span>150+ NBFC &amp; BANKS TIE-UP</span></div><div><b>ROI STARTING FROM</b><span>7.15%*</span></div>
+</section>
+
+<section class="form no-print">
+<div><label>Customer Name</label><input id="name" placeholder="Enter customer name"></div>
+<div><label>Mobile Number</label><input id="mobile" type="tel" placeholder="Enter mobile number"></div>
+<div class="full"><label>Loan Type</label>
+<select id="loanType" onchange="renderDocs()">
+<option value="home">Home Loan</option><option value="lap">Loan Against Property (LAP)</option><option value="business">Business Loan</option><option value="personal">Personal Loan</option><option value="vehicle">Vehicle Loan</option><option value="education">Education Loan</option><option value="project">Project Funding</option><option value="cc">CC Limit</option>
+</select></div>
+<div class="full"><button class="primary" onclick="showChecklist()">Generate Document Checklist</button></div>
+</section>
+
+<section class="section">
+<h2>DOCUMENTS REQUIRED</h2>
+<div class="progress">Documents Submitted: <strong id="count">0 / 0</strong></div>
+<div id="docs"></div>
+</section>
+
+<section class="section no-print">
+<div class="actions">
+<button class="action" onclick="window.print()">Print / Save PDF</button>
+<button class="action whatsapp" onclick="sendWhatsApp()">Send to Munmun Finance</button>
+<button class="action" onclick="sendCustomer()">WhatsApp Customer</button>
+</div>
+</section>
+
+<section class="section">
+<h2>IMPORTANT NOTES</h2>
+<div class="notes">
+• This checklist is indicative; exact requirements may vary by lender, loan product and customer profile.<br>
+• Additional documents may be requested during login, verification, sanction or disbursement.<br>
+• Submit clear, valid and readable copies of applicable documents.<br>
+• Never share passwords, OTPs or banking credentials.
+</div>
+</section>
+
+<section class="footer">
+<h3>Contact Munmun Finance</h3>
+<div class="contacts">📱 <b>Mobile / WhatsApp:</b> 9522501269 / 9343551379<br>📧 <b>Email:</b> munmunfinance285@gmail.com • sahuyash285@gmail.com<br>📸 <b>Instagram:</b> @munmun_finance</div>
+<div class="disclaimer">*ROI starting from 7.15% is indicative and subject to lender eligibility, credit profile, applicable policies, fees and final approval.</div>
+</section>
+</div></div>
+
+<script>
+const docs={
+home:{
+"KYC Documents":["PAN Card","Aadhaar Card / Address Proof","Passport Size Photograph"],
+"Income Documents":["Last 2–3 Years ITR / Last 3 Years Form 16","Last 6–12 Months Bank Statement","Salary Slips / Income Proof (if applicable)","Business Financials / P&L / Balance Sheet (if applicable)"],
+"Property Documents":["Sale Deed / Registry","Previous Chain Documents","Property Tax Receipt","Approved Map / Plan","Diversion / Property Documents (if applicable)","Other applicable property documents"],
+"Additional / Common Documents":["Statement of All Existing Loans","Electricity Bill","Rent Agreement (if applicable)","Last 13 Years Chain Documents","GST Certificate / GST Documents (if applicable)"],
+"Co-Applicant Documents (if applicable)":["Aadhaar Card of Co-Applicant","PAN Card of Co-Applicant","Last 1 Year Bank Statement of Co-Applicant","Income Proof / Salary Slips of Co-Applicant","Last 3 Years ITR / Last 3 Years Form 16 of Co-Applicant"]
+},
+lap:{
+"KYC Documents":["PAN Card","Aadhaar Card / Address Proof","Passport Size Photograph"],
+"Income Documents":["Last 2–3 Years ITR / Last 3 Years Form 16","Last 6–12 Months Bank Statement","Business Financials / P&L / Balance Sheet (if applicable)"],
+"Property / Security Documents":["Sale Deed / Registry","Previous Chain Documents","Property Tax Receipt","Approved Map / Plan","Diversion / Property Documents (if applicable)","Existing Loan Statement (if applicable)"],
+"Additional / Common Documents":["Statement of All Existing Loans","Electricity Bill","Rent Agreement (if applicable)","Last 13 Years Chain Documents","GST Certificate / GST Documents (if applicable)"],
+"Co-Applicant Documents (if applicable)":["Aadhaar Card of Co-Applicant","PAN Card of Co-Applicant","Last 1 Year Bank Statement of Co-Applicant","Income Proof / Salary Slips of Co-Applicant","Last 3 Years ITR / Last 3 Years Form 16 of Co-Applicant"]
+},
+business:{
+"KYC Documents":["PAN Card","Aadhaar Card / Address Proof","Passport Size Photograph"],
+"Business Documents":["Business Registration / Gumasta","GST Certificate (if applicable)","Last 2–3 Years ITR","Last 2–3 Years Financials / P&L / Balance Sheet","Last 6–12 Months Business Bank Statement","Udyam / MSME Certificate (if applicable)"],
+"Other Documents":["Existing Loan Statement (if applicable)","Business / Company ownership documents","Other lender-specific documents"],
+"Additional / Common Documents":["Statement of All Existing Loans","Electricity Bill","Rent Agreement (if applicable)","Last 13 Years Chain Documents","GST Certificate / GST Documents (if applicable)"],
+"Co-Applicant Documents (if applicable)":["Aadhaar Card of Co-Applicant","PAN Card of Co-Applicant","Last 1 Year Bank Statement of Co-Applicant","Income Proof / Salary Slips of Co-Applicant","Last 3 Years ITR / Last 3 Years Form 16 of Co-Applicant"]
+},
+personal:{
+"KYC Documents":["PAN Card","Aadhaar Card / Address Proof","Passport Size Photograph"],
+"Income Documents":["Last 3–6 Months Salary Slips (if salaried)","Last 6–12 Months Bank Statement","Last 3 Years ITR / Last 3 Years Form 16 (if applicable)","Employment / Income Proof"],
+"Other Documents":["Existing Loan Statement (if applicable)","Other lender-specific documents"],
+"Additional / Common Documents":["Statement of All Existing Loans","Electricity Bill","Rent Agreement (if applicable)","Last 13 Years Chain Documents","GST Certificate / GST Documents (if applicable)"],
+"Co-Applicant Documents (if applicable)":["Aadhaar Card of Co-Applicant","PAN Card of Co-Applicant","Last 1 Year Bank Statement of Co-Applicant","Income Proof / Salary Slips of Co-Applicant","Last 3 Years ITR / Last 3 Years Form 16 of Co-Applicant"]
+},
+vehicle:{
+"KYC Documents":["PAN Card","Aadhaar Card / Address Proof","Passport Size Photograph"],
+"Income Documents":["Last 2–3 Years ITR / Last 3 Years Form 16 (if applicable)","Last 6–12 Months Bank Statement","Salary Slips / Income Proof"],
+"Vehicle Documents":["Vehicle Quotation / Proforma Invoice","RC / Insurance (for used vehicle, if applicable)","Seller / Dealer Documents (if applicable)"],
+"Other Documents":["Existing Loan Statement (if applicable)"],
+"Additional / Common Documents":["Statement of All Existing Loans","Electricity Bill","Rent Agreement (if applicable)","Last 13 Years Chain Documents","GST Certificate / GST Documents (if applicable)"],
+"Co-Applicant Documents (if applicable)":["Aadhaar Card of Co-Applicant","PAN Card of Co-Applicant","Last 1 Year Bank Statement of Co-Applicant","Income Proof / Salary Slips of Co-Applicant","Last 3 Years ITR / Last 3 Years Form 16 of Co-Applicant"]
+},
+education:{
+"KYC Documents":["PAN Card","Aadhaar Card / Address Proof","Passport Size Photograph"],
+"Education Documents":["Admission / Offer Letter","Fee Structure","Academic Certificates / Mark Sheets","Co-applicant / Sponsor Income Proof"],
+"Financial Documents":["Bank Statement","ITR / Salary Slips of co-applicant or sponsor (if applicable)"],
+"Other Documents":["Other institution / lender-specific documents"],
+"Additional / Common Documents":["Statement of All Existing Loans","Electricity Bill","Rent Agreement (if applicable)","Last 13 Years Chain Documents","GST Certificate / GST Documents (if applicable)"],
+"Co-Applicant Documents (if applicable)":["Aadhaar Card of Co-Applicant","PAN Card of Co-Applicant","Last 1 Year Bank Statement of Co-Applicant","Income Proof / Salary Slips of Co-Applicant","Last 3 Years ITR / Last 3 Years Form 16 of Co-Applicant"]
+},
+project:{
+"KYC Documents":["PAN Card","Aadhaar Card / Address Proof","Passport Size Photograph"],
+"Project Documents":["Project Report / DPR","Cost Estimate","Land / Property Documents","Approved Plan / Permissions (if applicable)","Project Cash Flow / Financial Projections"],
+"Business / Financial Documents":["Business Registration / Gumasta","GST Certificate (if applicable)","Last 2–3 Years ITR","Financial Statements","Bank Statements","Existing Loan Details (if applicable)"],
+"Other Documents":["Subsidy / Scheme Documents (if applicable)","Other lender-specific documents"],
+"Additional / Common Documents":["Statement of All Existing Loans","Electricity Bill","Rent Agreement (if applicable)","Last 13 Years Chain Documents","GST Certificate / GST Documents (if applicable)"],
+"Co-Applicant Documents (if applicable)":["Aadhaar Card of Co-Applicant","PAN Card of Co-Applicant","Last 1 Year Bank Statement of Co-Applicant","Income Proof / Salary Slips of Co-Applicant","Last 3 Years ITR / Last 3 Years Form 16 of Co-Applicant"]
+},
+cc:{
+"KYC Documents":["PAN Card","Aadhaar Card / Address Proof","Passport Size Photograph"],
+"Business Documents":["Business Registration / Gumasta","GST Certificate (if applicable)","Last 2–3 Years ITR","Last 2–3 Years Financial Statements","Last 6–12 Months Bank Statements"],
+"Property / Security Documents":["Property Documents (if secured)","Existing Loan / Charge Details (if applicable)"],
+"Other Documents":["Existing CC/OD Statement (if applicable)","Other lender-specific documents"],
+"Additional / Common Documents":["Statement of All Existing Loans","Electricity Bill","Rent Agreement (if applicable)","Last 13 Years Chain Documents","GST Certificate / GST Documents (if applicable)"],
+"Co-Applicant Documents (if applicable)":["Aadhaar Card of Co-Applicant","PAN Card of Co-Applicant","Last 1 Year Bank Statement of Co-Applicant","Income Proof / Salary Slips of Co-Applicant","Last 3 Years ITR / Last 3 Years Form 16 of Co-Applicant"]
+}
+};
+
+function renderDocs(){
+ const data=docs[document.getElementById("loanType").value],box=document.getElementById("docs");
+ box.innerHTML="";
+ for(const [cat,items] of Object.entries(data)){
+  const c=document.createElement("div");c.className="category";c.innerHTML="<h3>"+cat+"</h3>";
+  items.forEach(item=>{
+   const row=document.createElement("label");row.className="doc";
+   row.innerHTML='<input type="checkbox" data-doc="'+item.replace(/"/g,"&quot;")+'" onchange="updateCount()"><span>'+item+"</span>";
+   c.appendChild(row);
+  });box.appendChild(c);
+ }
+ updateCount();
+}
+function updateCount(){
+ const a=[...document.querySelectorAll("#docs input")],d=a.filter(x=>x.checked).length;
+ document.getElementById("count").textContent=d+" / "+a.length;
+}
+function showChecklist(){
+ if(!document.getElementById("name").value.trim()){alert("Please enter Customer Name.");return;}
+ renderDocs();document.getElementById("docs").scrollIntoView({behavior:"smooth"});
+}
+function message(){
+ const name=document.getElementById("name").value.trim(),mobile=document.getElementById("mobile").value.trim();
+ const type=document.getElementById("loanType").selectedOptions[0].text;
+ const a=[...document.querySelectorAll("#docs input")],done=a.filter(x=>x.checked).map(x=>x.dataset.doc),pending=a.filter(x=>!x.checked).map(x=>x.dataset.doc);
+ return `*MUNMUN FINANCE - DOCUMENT CHECKLIST*\n\nCustomer: ${name}\nMobile: ${mobile||"-"}\nLoan Type: ${type}\n\n*Submitted (${done.length}):*\n${done.length?done.map(x=>"✓ "+x).join("\n"):"None"}\n\n*Pending (${pending.length}):*\n${pending.length?pending.map(x=>"• "+x).join("\n"):"None"}\n\nFinal document requirements are subject to lender policy and customer profile.\n\n*Munmun Finance - Powered by Yash Sahu*`;
+}
+function sendWhatsApp(){
+ if(!document.getElementById("name").value.trim()){alert("Generate the checklist first.");return;}
+ window.open("https://wa.me/919522501269?text="+encodeURIComponent(message()),"_blank");
+}
+function sendCustomer(){
+ const m=document.getElementById("mobile").value.replace(/\D/g,"");
+ if(!m){alert("Enter customer mobile number first.");return;}
+ window.open("https://wa.me/"+(m.length===10?"91"+m:m)+"?text="+encodeURIComponent(message()),"_blank");
+}
+renderDocs();
+</script>
+</body>
+</html>
